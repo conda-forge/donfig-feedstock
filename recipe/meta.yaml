@@ -1,5 +1,5 @@
 {% set name = "donfig" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96931a22d1c8e7a4eaa2e27e175d6eac231e1968dea5b554caaa6eadd3abf9bd
+  sha256: 671d663ccab53199562b38c1996e9bd87e29660543813c4d40d44df85604d0f3
 
 build:
   number: 0
