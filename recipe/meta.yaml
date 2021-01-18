@@ -1,27 +1,27 @@
 {% set name = "donfig" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 580d4470e3e03658d56be92c3772dd033df95ba261f84588c1465b970762b643
+  sha256: f2ca3bc2c45c3c3bd0ba5ac79035c56aeb46451b7f0cf81018b57de3af268ea7
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
     - pyyaml
   run:
-    - python
+    - python >=3.6
     - pyyaml
 
 test:
