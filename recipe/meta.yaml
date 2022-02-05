@@ -10,18 +10,18 @@ source:
   sha256: 7e3993981b7312edb16098989e4cb084ff58c1b1d8e9878c7c0107eabf18dbfa
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - setuptools
     - pyyaml
   run:
-    - python >=3.6
+    - python >=3.7
     - pyyaml
 
 test:
