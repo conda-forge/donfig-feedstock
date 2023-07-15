@@ -31,6 +31,7 @@ test:
     - donfig.tests
   requires:
     - pytest
+    - cloudpickle
 
 about:
   home: https://github.com/pytroll/donfig
