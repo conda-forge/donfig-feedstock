@@ -20,6 +20,7 @@ requirements:
     - pip
     - setuptools
     - pyyaml
+    - versioneer
   run:
     - python >=3.8
     - pyyaml
