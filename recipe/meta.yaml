@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
     - setuptools
     - pyyaml
   run:
-    - python >=3.7
+    - python >=3.8
     - pyyaml
 
 test:
@@ -30,6 +30,7 @@ test:
     - donfig.tests
   requires:
     - pytest
+    - cloudpickle
 
 about:
   home: https://github.com/pytroll/donfig
