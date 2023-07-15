@@ -1,5 +1,5 @@
 {% set name = "donfig" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7e3993981b7312edb16098989e4cb084ff58c1b1d8e9878c7c0107eabf18dbfa
+  sha256: d1773b550e5f1e0930dee03565ce610d1c53a9f9af95fcc46f587cc70e9d39ff
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
     - setuptools
     - pyyaml
+    - versioneer
   run:
-    - python >=3.7
+    - python >=3.8
     - pyyaml
 
 test:
@@ -30,6 +31,7 @@ test:
     - donfig.tests
   requires:
     - pytest
+    - cloudpickle
 
 about:
   home: https://github.com/pytroll/donfig
