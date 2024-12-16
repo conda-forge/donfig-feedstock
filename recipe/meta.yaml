@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3bef3413a4c1c601b585e8d297256d0c1470ea012afa6e8461dc28bfb7c23f52
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
     - pyyaml
     - versioneer
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pyyaml
 
 test:
@@ -32,6 +32,7 @@ test:
   requires:
     - pytest
     - cloudpickle
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pytroll/donfig
